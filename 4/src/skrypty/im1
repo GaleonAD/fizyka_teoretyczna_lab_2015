@@ -1,0 +1,17 @@
+set terminal png transparent nocrop enhanced size 450,320 font "arial,8" 
+set output '1.png'
+set view map scale 1
+set samples 101, 101
+set isosamples 2, 2
+set style data pm3d
+set style function pm3d
+set xtics 2 norangelimit
+unset ytics
+unset ztics
+set title "gamma = 0.75" 
+set xrange [ 0.0000 : 49.0000 ] noreverse nowriteback
+set yrange [ 0.0000 : 49.0000 ] noreverse nowriteback
+#set cbrange [ -100.0000 : 600.0000 ] noreverse nowriteback
+set pm3d implicit at b
+set palette positive nops_allcF maxcolors 0 gamma 0.75 gray
+plot 'out' using 1:2:3 with image

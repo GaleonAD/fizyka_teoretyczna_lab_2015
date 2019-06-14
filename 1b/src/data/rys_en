@@ -1,0 +1,8 @@
+set term jpeg
+set out 'wykres.jpg'                   
+set multiplot 
+
+set ylabel 'Energia [J]'
+set xlabel 'Czas [s]'
+
+plot 'E1' u 1:4 w l t 'dt=0.0001 s' , 'E2' u 1:4 w l t 'dt=0.00001 s'

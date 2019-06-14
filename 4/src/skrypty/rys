@@ -1,0 +1,9 @@
+set terminal postscript eps enhanced colour
+set out 'oda.eps'
+set multiplot 
+# set ytics nomirror
+# set y2tics nomirror
+set ylabel 'polozenie [m]'
+# set y2label 'położenie [m]'
+set xlabel 'czas [s]'
+plot 'alfa02' u 1:4  w l t '{/Symbol a}=0.2','alfa05' u 1:4  w l t '{/Symbol a}=0.5','alfa1' u 1:4  w l t '{/Symbol a}=1'#,'alfa2' u 1:4  w l t '{/Symbol a}=2'

@@ -1,0 +1,27 @@
+#set terminal png transparent nocrop enhanced size 450,320 font "arial,8" 
+set terminal png transparent nocrop enhanced size 540,384 font "arial,8" 
+set output '1.png'
+set dummy u, v
+set key at screen 1, 0.9, 0 right top vertical Right noreverse enhanced autotitle nobox
+set style textbox opaque margins  0.5,  0.5 noborder
+set parametric
+set view 60, 30, 1, 1.1
+set samples 5, 5
+set isosamples 2, 2
+set contour base
+set cntrlabel  format '%8.3g' font ',7' start 5 interval 20
+set cntrparam order 8
+set cntrparam bspline
+set cntrparam levels auto 10
+set style data lines
+#set title "contour of data grid plotting" 
+set xlabel "x" 
+set ylabel "y" 
+set zlabel "V [mV]" 
+set zlabel  offset character 1, 0, 0 font "" textcolor lt -1 norotate
+set zrange [ -20.00000 : 170.00000 ] noreverse nowriteback
+#set xrange [ 1.00000 : 49.00000 ] noreverse nowriteback
+#set yrange [ 1.00000 : 49.00000 ] noreverse nowriteback
+u = 0.0
+## Last datafile plotted: "glass.dat"
+splot "out" t ""

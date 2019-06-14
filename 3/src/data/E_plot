@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "set term png" > E_plot.p
+echo "set out 'en.png'" >> E_plot.p
+echo "set multiplot " >> E_plot.p
+echo "set ytics nomirror" >> E_plot.p
+echo "set y2tics nomirror" >> E_plot.p
+echo "set ylabel 'energia [J]'" >> E_plot.p
+echo "set xlabel 'czas [s]'" >> E_plot.p
+echo "plot 'E.001' u 1:5 w l t 'dt = 0,001', 'E.0001' u 1:5 w l t 'dt=0,0001','E.00001' u 1:5 w l t 'dt=0,00001' " >> E_plot.p
+
+# draw
+
+gnuplot E_plot.p
+
+display en.png

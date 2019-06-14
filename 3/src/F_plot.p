@@ -1,0 +1,11 @@
+set term png enhanced
+set out 'fi.png'
+set multiplot
+ set size square
+ set size 0.7,1
+ set size ratio -1
+set ylabel 'y[m]'
+set xlabel 'x[m]'
+# set yrange [-3:5]
+# set xrange [-3:5]
+plot 'F0' u 6:7 w l t '{/Symbol j}_{0}=0', 'F1' u 6:7 w l t '{/Symbol j}_{0}=1', 'F2' u 6:7 w l t '{/Symbol j}_{0}=2'
